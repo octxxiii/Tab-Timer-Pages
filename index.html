@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tab Timer - 시간 관리 대시보드</title>
+    <title>Tab Timer - 디지털 웰빙 대시보드</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Tab Timer 대시보드</h1>
+            <h1>Tab Timer 디지털 웰빙 대시보드</h1>
             <nav>
                 <ul>
                     <li><a href="#daily">일간 통계</a></li>
                     <li><a href="#weekly">주간 통계</a></li>
+                    <li><a href="#wellness">웰빙 인사이트</a></li>
                     <li><a href="#goals">목표 설정</a></li>
                 </ul>
             </nav>
@@ -32,6 +33,33 @@
                 <h2>주간 통계</h2>
                 <div class="chart-container">
                     <canvas id="weeklyChart"></canvas>
+                </div>
+            </section>
+
+            <section id="wellness" class="dashboard-section">
+                <h2>웰빙 인사이트</h2>
+                <div class="wellness-container">
+                    <div class="wellness-card">
+                        <h3>디지털 디톡스 점수</h3>
+                        <div class="score" id="detoxScore">0</div>
+                        <p class="wellness-description">디지털 사용 시간과 휴식 시간의 균형을 나타내는 점수입니다.</p>
+                    </div>
+                    <div class="wellness-card">
+                        <h3>생산성 지수</h3>
+                        <div class="score" id="productivityScore">0</div>
+                        <p class="wellness-description">집중 시간과 산만 시간의 비율을 나타내는 지수입니다.</p>
+                    </div>
+                    <div class="wellness-card">
+                        <h3>스트레스 레벨</h3>
+                        <div class="score" id="stressLevel">0</div>
+                        <p class="wellness-description">연속적인 디지털 사용으로 인한 스트레스 수준을 나타냅니다.</p>
+                    </div>
+                </div>
+                <div class="wellness-tips">
+                    <h3>웰빙 팁</h3>
+                    <ul id="wellnessTips">
+                        <!-- Tips will be dynamically added here -->
+                    </ul>
                 </div>
             </section>
 
