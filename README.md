@@ -1,28 +1,32 @@
-# Tab Timer
+# Tab Timer Landing Page
 
-웹 브라우저에서 각 사이트별 사용 시간을 추적하고 관리할 수 있는 Chrome 확장 프로그램입니다.
+이 레포지토리는 Tab Timer Chrome 확장 프로그램의 랜딩 페이지를 관리하기 위한 저장소입니다.
 
-## 주요 기능
+> **참고**: 실제 Tab Timer 확장 프로그램의 소스 코드는 별도의 [Tab Timer 저장소](https://github.com/octxxiii/tab-timer)에서 관리됩니다.
 
-- 🕒 실시간 사용 시간 추적
-- ⏰ 사이트별 시간 제한 설정
-- 🔔 시간 제한 도달 시 알림
-- 📊 일일 사용 통계 확인
-- 🌐 모든 웹사이트 지원
+## 프로젝트 설명
+
+이 웹사이트는 Tab Timer Chrome 확장 프로그램의 공식 랜딩 페이지로, 다음과 같은 정보를 제공합니다:
+
+- 확장 프로그램 소개
+- 주요 기능 설명
+- 설치 방법 안내
+- 사용 방법 가이드
+- 개인정보 보호 정책
+- 디지털 웰빙 대시보드
 
 ## 기술 스택
 
-- Chrome Extension API
+- HTML5
+- CSS3
 - JavaScript (ES6+)
-- HTML5 & CSS3
-- Local Storage
 - Chart.js (데이터 시각화)
 
 ## 프로젝트 구조
 
 ```
 .
-├── index.html          # 랜딩 페이지
+├── index.html          # 메인 랜딩 페이지
 ├── styles.css          # 메인 스타일시트
 ├── script.js           # 메인 JavaScript
 ├── dashboard.html      # 대시보드 페이지
@@ -34,14 +38,11 @@
 
 ## 주요 기능 설명
 
-### 시간 추적
-- 모든 웹사이트의 사용 시간을 자동으로 추적
-- 실시간 사용 시간 확인 가능
-
-### 시간 제한 설정
-- 특정 사이트에 대한 시간 제한 설정 가능
-- 시간 제한 도달 시 알림 제공
-- 연장 또는 닫기 옵션 제공
+### 랜딩 페이지
+- 확장 프로그램 소개 및 기능 설명
+- 설치 방법 안내
+- 사용 방법 가이드
+- 개인정보 보호 정책
 
 ### 대시보드
 - 일일/주간 사용 통계 제공
@@ -60,6 +61,10 @@
 1. Chrome 웹 스토어에서 "Tab Timer" 검색
 2. "Chrome에 추가" 버튼 클릭
 3. 설치 완료 후 Chrome 툴바에서 Tab Timer 아이콘 확인
+
+## 관련 프로젝트
+
+- [Tab Timer 확장 프로그램](https://github.com/octxxiii/tab-timer) - 실제 Chrome 확장 프로그램 소스 코드
 
 ## 라이선스
 
