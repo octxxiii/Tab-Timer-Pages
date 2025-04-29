@@ -2,7 +2,7 @@
 
 이 레포지토리는 Tab Timer Chrome 확장 프로그램의 랜딩 페이지를 관리하기 위한 저장소입니다.
 
-> **참고**: 실제 Tab Timer 확장 프로그램의 소스 코드는 별도의 [Tab Timer 저장소](https://github.com/octxxiii/tab-timer)에서 관리됩니다.
+> **참고**: 실제 Tab Timer 확장 프로그램의 소스 코드는 별도의 [비공개 Tab Timer 저장소](https://github.com/octxxiii/tab-timer)에서 관리됩니다.
 
 ## 프로젝트 설명
 
