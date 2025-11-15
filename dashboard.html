@@ -7,14 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="dashboard.css">
     <style>
-        :root {
-            --primary-color: #4a90e2;
-            --text-color: #333;
-            --bg-color: #f5f5f5;
-            --card-bg: #ffffff;
-            --border-color: #e0e0e0;
-        }
 
         * {
             margin: 0;
@@ -23,23 +18,23 @@
         }
 
         body {
-            font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: var(--font-family-primary);
+            line-height: var(--line-height-normal);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: var(--container-max-width);
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--container-padding);
         }
 
         header {
-            background-color: var(--card-bg);
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
+            background-color: var(--color-bg-card);
+            padding: var(--spacing-md) 0;
+            box-shadow: var(--shadow-md);
+            margin-bottom: var(--spacing-xl);
         }
 
         header .container {
@@ -55,50 +50,50 @@
         }
 
         h1 {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary-color);
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--color-primary);
         }
 
         section {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--color-bg-card);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
         }
 
         h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary);
         }
 
         h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xl);
         }
 
         .stat-card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            background-color: var(--color-bg-card);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
         }
 
         .site-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-sm);
+            border-bottom: var(--border-width) solid var(--color-border);
         }
 
         .site-item:last-child {
@@ -110,41 +105,112 @@
         }
 
         .site-time {
-            color: var(--primary-color);
+            color: var(--color-primary);
         }
 
         .weekly-metric {
-            margin-bottom: 20px;
+            margin-bottom: var(--spacing-md);
         }
 
         .weekly-metric h4 {
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: var(--font-size-base);
+            margin-bottom: var(--spacing-sm);
         }
 
         .limit-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid var(--border-color);
+            padding: var(--spacing-sm);
+            border-bottom: var(--border-width) solid var(--color-border);
         }
 
         .limit-info {
-            color: var(--primary-color);
+            color: var(--color-primary);
         }
 
         footer {
             text-align: center;
-            padding: 20px 0;
-            color: #666;
+            padding: var(--spacing-md) 0;
+            color: var(--color-text-tertiary);
         }
 
         .error-message {
-            color: #ff4444;
+            color: var(--color-error);
             text-align: center;
-            padding: 10px;
-            margin-bottom: 20px;
+            padding: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+            background-color: rgba(255, 68, 68, 0.1);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .button-group {
+            display: flex;
+            gap: var(--spacing-sm);
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border: none;
+            border-radius: var(--border-radius-md);
+            font-size: var(--font-size-base);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-family: var(--font-family-primary);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-dark);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-light);
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-danger {
+            background-color: var(--color-error);
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #cc3333;
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .message {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            text-align: center;
+        }
+
+        .message.success {
+            background-color: rgba(0, 184, 148, 0.1);
+            color: var(--color-success);
+            border: 1px solid var(--color-success);
+        }
+
+        .message.error {
+            background-color: rgba(255, 68, 68, 0.1);
+            color: var(--color-error);
+            border: 1px solid var(--color-error);
         }
     </style>
 </head>
@@ -182,6 +248,10 @@
                     <h3>이번 주 요약</h3>
                     <div id="weekly-stats">로딩 중...</div>
                 </div>
+                <div class="stat-card">
+                    <h3>주간 사용 시간 추이</h3>
+                    <canvas id="weekly-chart" style="max-height: 300px;"></canvas>
+                </div>
             </div>
         </section>
 
@@ -196,6 +266,48 @@
                 </div>
             </div>
         </section>
+
+        <section id="data-management">
+            <h2>데이터 관리</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>데이터 내보내기</h3>
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-text-secondary);">
+                        데이터를 백업하거나 다른 기기로 옮기려면 내보내기를 사용하세요.
+                    </p>
+                    <div class="button-group">
+                        <button id="export-json-btn" class="btn btn-primary">
+                            JSON으로 내보내기
+                        </button>
+                        <button id="export-csv-btn" class="btn btn-secondary">
+                            CSV로 내보내기
+                        </button>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>데이터 가져오기</h3>
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-text-secondary);">
+                        이전에 내보낸 데이터를 가져와서 복원할 수 있습니다.
+                    </p>
+                    <div class="button-group">
+                        <label for="import-file-input" class="btn btn-primary" style="cursor: pointer;">
+                            JSON 파일 가져오기
+                        </label>
+                        <input type="file" id="import-file-input" accept=".json" style="display: none;">
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <h3>데이터 초기화</h3>
+                    <p style="margin-bottom: var(--spacing-md); color: var(--color-text-secondary);">
+                        모든 데이터를 삭제합니다. 이 작업은 되돌릴 수 없습니다.
+                    </p>
+                    <button id="clear-data-btn" class="btn btn-danger">
+                        모든 데이터 삭제
+                    </button>
+                </div>
+            </div>
+            <div id="data-management-message" class="message" style="display: none;"></div>
+        </section>
     </main>
 
     <footer>
@@ -204,6 +316,87 @@
         </div>
     </footer>
 
+    <script src="data-export.js"></script>
     <script src="dashboard.js"></script>
+    <script>
+        // 데이터 관리 이벤트 리스너
+        document.addEventListener('DOMContentLoaded', () => {
+            const exportJsonBtn = document.getElementById('export-json-btn');
+            const exportCsvBtn = document.getElementById('export-csv-btn');
+            const importFileInput = document.getElementById('import-file-input');
+            const clearDataBtn = document.getElementById('clear-data-btn');
+            const messageDiv = document.getElementById('data-management-message');
+
+            function showMessage(message, isSuccess = true) {
+                messageDiv.textContent = message;
+                messageDiv.className = `message ${isSuccess ? 'success' : 'error'}`;
+                messageDiv.style.display = 'block';
+                
+                setTimeout(() => {
+                    messageDiv.style.display = 'none';
+                }, 5000);
+            }
+
+            // JSON 내보내기
+            if (exportJsonBtn) {
+                exportJsonBtn.addEventListener('click', async () => {
+                    const result = await exportToJSON();
+                    showMessage(result.message, result.success);
+                    if (result.success) {
+                        setTimeout(() => {
+                            location.reload();
+                        }, 1000);
+                    }
+                });
+            }
+
+            // CSV 내보내기
+            if (exportCsvBtn) {
+                exportCsvBtn.addEventListener('click', async () => {
+                    const result = await exportToCSV();
+                    showMessage(result.message, result.success);
+                });
+            }
+
+            // JSON 가져오기
+            if (importFileInput) {
+                importFileInput.addEventListener('change', async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    if (!file.name.endsWith('.json')) {
+                        showMessage('JSON 파일만 가져올 수 있습니다.', false);
+                        return;
+                    }
+
+                    const result = await importFromJSON(file);
+                    showMessage(result.message, result.success);
+                    
+                    if (result.success) {
+                        setTimeout(() => {
+                            location.reload();
+                        }, 2000);
+                    }
+
+                    // 파일 입력 초기화
+                    e.target.value = '';
+                });
+            }
+
+            // 데이터 초기화
+            if (clearDataBtn) {
+                clearDataBtn.addEventListener('click', async () => {
+                    const result = await clearAllData();
+                    showMessage(result.message, result.success);
+                    
+                    if (result.success) {
+                        setTimeout(() => {
+                            location.reload();
+                        }, 2000);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html> 

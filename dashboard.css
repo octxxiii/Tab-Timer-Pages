@@ -1,46 +1,39 @@
-:root {
-    --primary-color: #4a90e2;
-    --secondary-color: #2c3e50;
-    --background-color: #f5f6fa;
-    --card-background: #ffffff;
-    --text-color: #2c3e50;
-    --border-radius: 10px;
-    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+/* Import design system variables */
+@import url('variables.css');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: var(--font-family-primary);
 }
 
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-normal);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--spacing-xl);
 }
 
 header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: var(--spacing-xl);
 }
 
 header h1 {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-sm);
 }
 
 header p {
-    color: var(--secondary-color);
-    font-size: 1.1rem;
+    color: var(--color-secondary);
+    font-size: var(--font-size-lg);
 }
 
 .dashboard-grid {
@@ -51,16 +44,17 @@ header p {
 }
 
 .card {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: var(--color-bg-card);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .card h2 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-2xl);
 }
 
 .top-sites ul,
@@ -70,26 +64,26 @@ header p {
 
 .top-sites li,
 .current-limits li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    padding: var(--spacing-sm) 0;
+    border-bottom: var(--border-width) solid var(--color-border-light);
 }
 
 .metric {
     text-align: center;
-    padding: 1rem;
-    margin: 1rem 0;
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
 }
 
 .metric-value {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
 }
 
 .metric-label {
-    font-size: 1rem;
-    color: #7f8c8d;
-    margin-top: 0.5rem;
+    font-size: var(--font-size-base);
+    color: var(--color-text-tertiary);
+    margin-top: var(--spacing-sm);
 }
 
 #wellbeing-tips ul {
@@ -97,8 +91,8 @@ header p {
 }
 
 #wellbeing-tips li {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #eee;
+    padding: var(--spacing-md) 0;
+    border-bottom: var(--border-width) solid var(--color-border-light);
 }
 
 #wellbeing-tips li:last-child {
@@ -107,22 +101,24 @@ header p {
 
 footer {
     text-align: center;
-    padding: 2rem 0;
-    color: var(--secondary-color);
+    padding: var(--spacing-xl) 0;
+    color: var(--color-secondary);
 }
 
 footer a {
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-decoration: none;
+    transition: color var(--transition-fast);
 }
 
 footer a:hover {
     text-decoration: underline;
+    color: var(--color-primary-dark);
 }
 
 @media (max-width: 768px) {
     .container {
-        padding: 1rem;
+        padding: var(--spacing-md);
     }
 
     .dashboard-grid {
@@ -130,21 +126,18 @@ footer a:hover {
     }
 
     header h1 {
-        font-size: 2rem;
+        font-size: var(--font-size-3xl);
     }
 
     .metric-value {
-        font-size: 2rem;
+        font-size: var(--font-size-3xl);
     }
 }
 
 /* 애니메이션 효과 */
-.card {
-    transition: transform 0.3s ease;
-}
-
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 /* 로딩 상태 스타일 */
@@ -157,14 +150,14 @@ footer a:hover {
 .chart-container {
     width: 100%;
     height: 200px;
-    margin-top: 1rem;
+    margin-top: var(--spacing-md);
 }
 
 /* 대시보드 스타일 */
 #dashboard {
-    max-width: 1200px;
+    max-width: var(--container-max-width);
     margin: 0 auto;
-    padding: 2rem;
+    padding: var(--spacing-xl);
 }
 
 #top-sites-list,
@@ -178,8 +171,8 @@ footer a:hover {
 #top-sites-list li,
 #tips-list li,
 #limits-list li {
-    padding: 0.5rem 0;
-    border-bottom: 1px solid #eee;
+    padding: var(--spacing-sm) 0;
+    border-bottom: var(--border-width) solid var(--color-border-light);
 }
 
 #top-sites-list li:last-child,
@@ -195,5 +188,5 @@ footer a:hover {
 }
 
 .card {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn var(--transition-slow) ease-in-out;
 } 
